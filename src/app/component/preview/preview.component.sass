@@ -1,9 +1,16 @@
 .preview
+  position: relative
   display: flex
   cursor: pointer
   width: 100%
 
+  &::after
+    content: ""
+    display: block
+    padding-bottom: 100%
+
   img
+    position: absolute
     object-fit: cover
     width: 100%
-    aspect-ratio: 1/1
+    height: 100%
