@@ -1,0 +1,11 @@
+<div class="overlay" *ngIf="selected">
+  <app-photo [photo]="selected"
+  ></app-photo>
+</div>
+<div class="gallery" *ngIf="photos">
+  <app-preview
+    *ngFor="let photo of photos; let i = index"
+    (click)="selected = photo"
+    [photo]="photo"
+  ></app-preview>
+</div>

@@ -1,0 +1,5 @@
+<div class="preview"
+     *ngIf="photo">
+  <!--     (click)="openImage(env.s3Path + env.imagePathPrefix + photo.filename)"-->
+  <img [src]="env.s3Path + env.thumbnailPathPrefix + photo.filename">
+</div>
