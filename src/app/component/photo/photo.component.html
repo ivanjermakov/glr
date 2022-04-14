@@ -1,3 +1,15 @@
 <div class="photo" *ngIf="photo">
-  <img [src]="env.s3Path + env.imagePathPrefix + photo.filename">
+  <img [hidden]="loading === true" [src]="env.s3Path + env.imagePathPrefix + photo.filename" (load)="loading = false">
+  <img [hidden]="loading === false" [src]="env.s3Path + env.thumbnailPathPrefix + photo.filename">
+<!--
+  <div class="details">
+    <p><span>Date published:</span>{{photo.createdAt}}</p>
+    <p *ngIf="photo.description"><span>Description:</span>{{photo.description}}</p>
+  </div>
+  <div class="menu">
+    <fa-icon [icon]="openIcon" size="2x"
+             (click)="openUrl(env.s3Path + env.imagePathPrefix + photo.filename)"
+    ></fa-icon>
+  </div>
+-->
 </div>

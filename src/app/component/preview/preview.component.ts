@@ -22,8 +22,4 @@ export class PreviewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openImage(url: string) {
-    window.open(url, '_blank')
-  }
-
 }

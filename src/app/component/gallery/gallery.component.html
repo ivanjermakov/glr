@@ -1,11 +1,28 @@
-<div class="overlay" *ngIf="selected">
+<div class="overlay photo" *ngIf="selected">
   <app-photo [photo]="selected"
+             (clickOutside)="selected = undefined"
   ></app-photo>
 </div>
-<div class="gallery" *ngIf="photos">
+<div class="overlay controls">
+  <div class="controls">
+    <fa-icon *ngIf="!selected"
+             [ngClass]="{'active': columns === 3}"
+             [icon]="multiColumnIcon" size="2x"
+             (click)="columns = 3"
+    ></fa-icon>
+    <fa-icon *ngIf="!selected"
+             [ngClass]="{'active': columns === 1}"
+             [icon]="singleColumnIcon" size="2x"
+             (click)="columns = 1"
+    ></fa-icon>
+  </div>
+</div>
+<div class="gallery" *ngIf="photos"
+     [ngStyle]="{'grid-template-columns': 'repeat('+columns+', 1fr)'}"
+>
   <app-preview
-    *ngFor="let photo of photos; let i = index"
-    (click)="selected = photo"
+    *ngFor="let photo of photos"
+    (click)="selected = photo; $event.stopPropagation()"
     [photo]="photo"
   ></app-preview>
 </div>

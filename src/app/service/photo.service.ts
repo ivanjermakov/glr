@@ -24,7 +24,13 @@ export class PhotoService {
         .order('created_at', {ascending: false})
     )
       .pipe(
-        map(r => r.data!)
+        map(r => r.data!),
+        map(ps => ps.map(p => ({
+          id: p.id,
+          createdAt: p.created_at,
+          filename: p.filename,
+          description: p.description
+        })))
       )
   }
 

@@ -1,12 +1,22 @@
 .photo
   display: flex
-  align-items: center
-  justify-content: center
-  background: gray
+  flex-direction: column
   width: 100%
-  height: 100%
+  background-color: var(--bg1)
+  border-radius: 1rem
+  box-shadow: rgba(0, 0, 0, 0.2) 0 8px 24px
 
   img
+    flex-basis: auto
+    flex-grow: 0
+    flex-shrink: 1
     object-fit: contain
+    display: block
+    max-width: 100%
+    height: calc(100vh - 5rem)
+    border-radius: 1rem 1rem 0 0
+
+  .menu
     width: 100%
-    height: 100%
+    flex-basis: 1fr
+    flex-grow: 1

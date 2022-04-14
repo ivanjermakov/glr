@@ -1,7 +1,19 @@
+\:root
+  --fg1: #000000
+  --fg2: #333333
+  --fg3: #666666
+  --bg1: #FFFFFF
+  --bg2: #EEEEEE
+  --accent1: #548ad2
+  --accent2: #235cab
+
 *
   font-size: 14px
   font-family: 'Work Sans', 'Open Sans', sans-serif
   box-sizing: border-box
+
+[hidden]
+  display: none !important
 
 body, app-root
   width: 100%
@@ -12,4 +24,20 @@ body
   max-width: 1280px
   padding: 0
   margin: 0 auto
-  background: var(--bg)
+  color: var(--fg1)
+  background: var(--bg1)
+  overflow-y: scroll
+
+.ng-fa-icon
+  color: var(--fg3)
+  padding: 1rem
+  cursor: pointer
+
+  &.active
+    color: var(--accent1)
+
+  &:hover
+    color: var(--fg2)
+
+    &.active
+      color: var(--accent2)
